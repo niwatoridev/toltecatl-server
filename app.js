@@ -23,6 +23,9 @@ app.use("/api", allRoutes);
 const workRoutes = require("./routes/works.routes")
 app.use("/api", workRoutes)
 
+const feedRoutes = require("./routes/feed.routes")
+app.use("/api", feedRoutes)
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

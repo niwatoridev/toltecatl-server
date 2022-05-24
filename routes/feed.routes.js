@@ -1,5 +1,12 @@
 const router = require("express").Router();
+const mongoose = require("mongoose");
+const Works = require("../models/Work.model");
 
-router.get("/", (req, res, next) => {
-    res.json();
+router.get("/feed", (req, res, next) => {
+  Works.find(() => {
+  console.log(foundWorks)
+  })
+  res.json();
   });
+
+  module.exports = router;

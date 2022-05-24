@@ -5,10 +5,10 @@ const User = require("../models/User.model");
 
 
 /* GET user works (portfolio) */
-router.get("/", (req, res, next) => {
-  const { _id } = req.session.user
+router.get("/:id", (req, res, next) => {
+  const { id } = req.session.user
   
-  User.findById(_id)
+  User.findById(id)
 
 
   res.json();
