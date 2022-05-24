@@ -4,14 +4,15 @@ const { Schema, model } = require("mongoose");
 const workSchema = new Schema(
   {
     title: String,        
-    type: {
-        enum: ["Photography", "Digital Ilustration", "Paint", "Shortfilm", "Song", "Book", "Poem"]
+    artType: {
+      type: String,
+      enum: ["Fotografia", "Ilustracion Digital", "Pintura", "Cortometraje", "Cancion", "Libro", "Poema"]
           },
     artist: {
         type: Schema.Types.ObjectId,
         ref: 'User',
       },
-      source: String,
+      workSource: String,
       content: {},      
     },
   {

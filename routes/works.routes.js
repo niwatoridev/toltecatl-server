@@ -11,27 +11,28 @@ router.get("/", (req, res, next) => {
   User.findById(_id)
 
 
-  res.json("Works Page");
+  res.json();
 });
 
 
 /* GET add work page */
 router.get("/add", (req, res, next) => {
-  res.json("Add Work Page");
+  res.json();
 });
 
 
 
 /* POST add work page */
 router.post("/works", (req, res, next) => {
-const artist = req.session.user._id
-Work.create({...req.body, artist})
+console.log(req.body)
+const artist = req.body.userid
 
+Work.create({...req.body, artist})
 .then(newWork => {
   return User.findByIdAndUpdate(artist, {$push: {works: newWork._id }})
 })
 .then(() => {
-  res.redirect("/works")
+  res.json({})
 })
 .catch(err => console.log(err))
 })

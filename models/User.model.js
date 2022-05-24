@@ -25,7 +25,10 @@ const userSchema = new Schema(
         unique: true,
         required: true,   
       },
-    profilePic: String,
+    profilePic: {
+      type: String,
+      default: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/profile-design-template-4c23db68ba79c4186fbd258aa06f48b3_screen.jpg?ts=1581063859"
+    },
     works: []
   },
   {

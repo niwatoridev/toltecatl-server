@@ -35,7 +35,7 @@ router.get("/session", (req, res) => {
 });
 
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, password, name, lastName, email, profilePic } = req.body;
+  const { username, password, name, lastName, email, works, profilePic } = req.body;
 
   if (!username) {
     return res
@@ -80,10 +80,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
           name,
           lastName,
           email,
+          works,
           profilePic
         });
       })
       .then((user) => {
+      console.log(user)
         Session.create({
           user: user._id,
           createdAt: Date.now(),
