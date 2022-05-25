@@ -5,14 +5,14 @@ const User = require("../models/User.model");
 
 
 /* GET user works (portfolio) */
-router.get("/:id", (req, res, next) => {
-  const { id } = req.session.user
+// router.get("/:id", (req, res, next) => {
+//   const { id } = req.session.user
   
-  User.findById(id)
+//   User.findById(id)
 
 
-  res.json();
-});
+//   res.json();
+// });
 
 
 /* GET add work page */

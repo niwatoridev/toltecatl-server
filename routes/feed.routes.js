@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 const Works = require("../models/Work.model");
 
 router.get("/feed", (req, res, next) => {
-  Works.find(() => {
-  console.log(foundWorks)
+  Works.find()
+  .then(foundWorks => {
+    console.log(foundWorks)
+    res.json(foundWorks);
   })
-  res.json();
+    .catch(console.log)
   });
 
   module.exports = router;

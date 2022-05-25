@@ -6,7 +6,7 @@ const workSchema = new Schema(
     title: String,        
     artType: {
       type: String,
-      enum: ["Fotografia", "Ilustracion Digital", "Pintura", "Cortometraje", "Cancion", "Libro", "Poema"]
+      enum: ["Fotografia", "Ilustracion Digital", "Pintura", "Cortometraje", "Cancion"]
           },
     artist: {
         type: Schema.Types.ObjectId,
