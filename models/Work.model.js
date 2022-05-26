@@ -13,6 +13,7 @@ const workSchema = new Schema(
         ref: 'User',
       },
       workSource: String,
+      likes: Number,
       content: {},      
     },
   {
