@@ -4,10 +4,10 @@ const User = require("../models/User.model");
 
 
 router.post("/like", (req, res, next) => {
-
 console.log(req.body)
 
-res.json()
+// User.findByIdAndUpdate(r)
+
 
 
 

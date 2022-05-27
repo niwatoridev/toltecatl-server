@@ -4,10 +4,6 @@ const User = require("../models/User.model");
 
 
 
-/* GET user works (portfolio) */
-
-
-
 /* GET add work page */
 // router.get("/add", (req, res, next) => {
 //   res.json();
