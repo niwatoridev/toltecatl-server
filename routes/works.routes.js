@@ -3,14 +3,6 @@ const Work = require("../models/Work.model")
 const User = require("../models/User.model");
 
 
-
-/* GET add work page */
-// router.get("/add", (req, res, next) => {
-//   res.json();
-// });
-
-
-
 /* POST add work page */
 router.post("/works", (req, res, next) => {
 console.log(req.body)
@@ -24,6 +16,32 @@ Work.create({...req.body, artist})
   res.json({})
 })
 .catch(err => console.log(err))
+})
+
+
+// EDIT Work
+
+router.put("/work/edit/:id", (req, res) => {
+const { id } = req.params
+Work.findByIdAndUpdate(id, req.body, {new: true})
+.then(workActualizado => {
+   res.json(workActualizado)
+  }).catch(console.log)
+})
+
+
+
+//DELETE Work
+router.delete("/work/delete/:id", (req, res) => {
+  const { id } = req.params
+
+  Work.findByIdAndDelete(id)
+  .then(eliminado => {
+    res.json(eliminado)
+    
+  }).catch(console.log)
+
+
 })
 
 
