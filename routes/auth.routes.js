@@ -20,6 +20,9 @@ router.get("/session", (req, res) => {
   if (!req.headers.authorization) {
     return res.json(null);
   }
+  if (req.headers.authorization !== null) {
+    return res.json({});
+  }
 
   // accessToken is being sent on every request in the headers
   const accessToken = req.headers.authorization;
